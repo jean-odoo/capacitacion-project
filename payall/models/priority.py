@@ -10,3 +10,6 @@ class Priority(models.Model):
     name = fields.Char(
         string = "Prioridad"
     )
+    value = fields.Integer(
+        string = "Valor"
+    )

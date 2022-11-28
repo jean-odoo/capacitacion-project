@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='hours_planned']" position='after'>
                     <field name="peso_computed" type="measure"/>
-                    <field name="prioridad_computed" type="measure"/>
+                    <field name="priority_payall"/>
                     <field name="sprint" type="measure"/>
                 </xpath>
             </field>

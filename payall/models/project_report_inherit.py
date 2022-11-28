@@ -12,8 +12,15 @@ class ReportProjectTaskUserInherit(models.Model):
         help = "Indique el número del sprint en el que está incluido el ítem"
     )
 
+    priority_payall = fields.Many2one(
+        string="Prioridad",
+        comodel_name="payall.task.priority",
+        help="Clasifique el ítem de trabajo según su importancia"
+    )
+
     peso_computed = fields.Integer(string='Peso', store=True)
-    prioridad_computed = fields.Integer(string='Prioridad', store=True)
+    # AGREGAR PRIORIDAD AQUI Y EN EL SELECT
+     #prioridad_computed = fields.Integer(string='Prioridad', store=True)
    
     def _select(self):
         select_str = """
@@ -40,7 +47,7 @@ class ReportProjectTaskUserInherit(models.Model):
                     t.working_hours_close as working_hours_close,
                     t.sprint,
                     t.peso_computed,
-                    t.prioridad_computed,
+                    t.priority_payall,
                     (extract('epoch' from (t.date_deadline-(now() at time zone 'UTC'))))/(3600*24)  as delay_endings_days
         """
         return select_str
