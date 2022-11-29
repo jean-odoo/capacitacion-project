@@ -49,8 +49,8 @@ class ProjectTask( models.Model):
             peso_comp = self.env['payall.task.peso'].search([('name', '=', record.peso.name)])
             record.peso_computed = peso_comp.name
     
-    @api.onchange('priority_payall')
-    def _getPrioridadComputed(self):
-        for record in self:
-            prioridad_comp = self.env['payall.task.priority'].search([('id', '=', record.priority_payall.id)])
-            record.prioridad_computed =  prioridad_comp.id
+    #@api.onchange('priority_payall')
+    #def _getPrioridadComputed(self):
+    #    for record in self:
+    #        prioridad_comp = self.env['payall.task.priority'].search([('id', '=', record.priority_payall.id)])
+    #        record.prioridad_computed =  prioridad_comp.id

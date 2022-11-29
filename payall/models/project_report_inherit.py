@@ -19,8 +19,7 @@ class ReportProjectTaskUserInherit(models.Model):
     )
 
     peso_computed = fields.Integer(string='Peso', store=True)
-    # AGREGAR PRIORIDAD AQUI Y EN EL SELECT
-     #prioridad_computed = fields.Integer(string='Prioridad', store=True)
+    #prioridad_computed = fields.Integer(string='Prioridad', store=True)
    
     def _select(self):
         select_str = """
